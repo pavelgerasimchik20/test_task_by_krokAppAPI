@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.parseAsHtml
 import androidx.fragment.app.Fragment
 import coil.load
 import com.geras.krok.data.model.CityDto
@@ -34,7 +35,7 @@ class DetailsFragment : Fragment() {
         val cityName = arguments?.getString(CITY_NAME) ?: ""
         val cityPhoto = arguments?.getString(CITY_PHOTO) ?: ""
 
-        binding.description.text = text
+        binding.description.text = text.parseAsHtml()
         binding.photoDetails.load(photo)
         binding.titleDetails.text = name
         binding.ivCityFromToolbar.load(cityPhoto)
