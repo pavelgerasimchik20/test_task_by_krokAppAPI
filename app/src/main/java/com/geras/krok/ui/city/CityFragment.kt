@@ -35,7 +35,6 @@ class CityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter = CityAdapter {
-            // TODO
             val activity = activity as? MainActivity
             activity?.openPointsFragment(it)
         }
